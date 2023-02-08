@@ -10,7 +10,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build_test:
+  
+  Run-npm-on-Ubuntu:
+    name: Run npm on Ubuntu
 
     runs-on: ubuntu-latest
 
