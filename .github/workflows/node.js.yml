@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build and test app
-      working-directory: app
+      working-directory: /home/runner/work/_temp/3d61d92c-75c6-4f9b-ba1e-768d92e5810e/nodejsapp
       run: |
           npm install
           npm run build --if-present
