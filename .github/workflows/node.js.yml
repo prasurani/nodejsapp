@@ -28,8 +28,25 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build
-      working-directory: 
+      working-directory: nodejsapp
       run: |
           npm install
           npm run build --if-present
+    - name: Checkout source code
+      uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+          node-version: 12
+    - name: Install dependencies
+      run: yarn install
+    - name: Gather Test Coverage
+      run: yarn test-coverage
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+          SONAR_TOKEN: 6cf42440c1250068a5e66e9824c5a2975f2085b3
+          SONAR_HOST_URL: http://54.204.133.225:9000/
           
