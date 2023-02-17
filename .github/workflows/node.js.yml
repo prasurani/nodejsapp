@@ -49,7 +49,7 @@ jobs:
         with:
           projectBaseDir: .
  
- docker:
+  docker:
     runs-on: ubuntu-latest
     steps:
       -
@@ -69,7 +69,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: user/app:latest
+          tags: prasurani1/nodejsapp1.1:v1.1
           
           
   
