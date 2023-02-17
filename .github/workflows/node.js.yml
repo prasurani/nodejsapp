@@ -53,8 +53,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        name:set up prasurani1/nodejsapp1.1:v1.0
+        uses:docker/setup-nodejsapp1.1:v1.0-action@v2
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
