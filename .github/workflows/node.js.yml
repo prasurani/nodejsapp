@@ -44,17 +44,16 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          #GITHUB_TOKEN:       # ${{ secrets.GITHUB_TOKEN }}  
+          GITHUB_TOKEN: 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     # ${{ secrets.GITHUB_TOKEN }}  
           SONAR_TOKEN:  530a47e41bd3d7dfef288890cb603c4a8a4a9863      #${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: .
+        
  
   docker:
     runs-on: ubuntu-latest
     steps:
       -
-        name:set up prasurani1/nodejsapp1.1:v1.0
-        uses:docker/setup-nodejsapp1.1:v1.0-action@v2
+        name:set up nodejsapp
+        uses:docker/setup-nodejsapp-action@v2
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
